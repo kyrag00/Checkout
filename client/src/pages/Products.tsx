@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import "../styles/products.css"
 
 interface IProduct {
     id: string;
@@ -43,22 +44,21 @@ const Products = () => {
 
     return (
         <>
-            <h2>Products</h2>
-            
-                {products.map(product => (
-                    <div key={product.id}>
-                      <h3>Name: {product.name}</h3> 
-                      
+            <h1>Products</h1>
+                    <div className="prod_container">
+                        {products.map(product => (
+                            <div className="product" key={product.id}>
+                      <h3>{product.name}</h3> 
+                      <div className="prod_details">
                       {product.images.map((image, index) => (
                         <img key={index} src={image} alt={product.name} />
                       ))}
-                        
                         <p>{product.description}</p>
-                        
                         <p>Price: {product.price !== undefined ? `${product.price} SEK` : 'Price not available'} SEK</p>
                     </div>
+                    </div>
                 ))}
-            
+            </div>
         </>
     )
 }
