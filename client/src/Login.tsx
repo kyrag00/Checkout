@@ -1,9 +1,12 @@
 import { ChangeEvent, useState } from "react"
 
-const Login = () => {
+interface ILoginProps {
+    setUser: (user: string) => void
+}
+
+const Login = ({setUser}: ILoginProps) => {
     const [email, setEmail] = useState<string>("")
     const [password, setPassword] = useState<string>("")
-    const [user, setUser] = useState<string>("")
 
     const handleLogin = async() => {
         const response = await fetch("http://localhost:3000/api/auth/login", {
