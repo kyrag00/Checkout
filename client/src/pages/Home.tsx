@@ -1,4 +1,8 @@
+import { useState } from "react"
+
 const Home = () => {
+    const [user, setUser] = useState<string>("")
+    
     return (
         <>
         <h1>Blooming</h1>
