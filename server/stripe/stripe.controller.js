@@ -21,11 +21,27 @@ const createCheckoutSession = async (req, res) => {
     res.status(200).json({url: session.url})
 }
 
+const verifySession = async(req, res) => {
+    const stripe = initStripe()
+    const sessionId = req.body.sessionId
+
+    const session = await stripe.checkout.session.retrieve(sessionId)
+    console.log(session)
+}
+
 const listAllProducts = async (req, res) => {
     const stripe = initStripe()
 
-    const products = await stripe.products.list()
-    res.json(products.data)
+    try {
+    const products = await stripe.products.list({
+        limit: 3,
+        expand: ["data.default_price"]
+    })
+    res.status(200).json(products)
+    } catch (error) {
+        console.log(error)
+        res.status(400).json(error)
+    }
 }
 
-module.exports = {createCheckoutSession, listAllProducts}
+module.exports = {createCheckoutSession, listAllProducts, verifySession}

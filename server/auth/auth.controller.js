@@ -1,10 +1,12 @@
 // const initStripe = require("../stripe")
+const initStripe = require("../stripe")
 const fetchUsers = require("../utils/fetchUsers")
 const fs = require("fs").promises
 const bcrypt = require("bcrypt")
 
 const register = async(req, res) => {
     const {email, password} = req.body
+    const stripe = initStripe()
 
 //Check if user already exists
 const users = await fetchUsers()
@@ -14,16 +16,23 @@ if (userAlreadyExists) {
     return res.status(400).json("User already exists")
 }
 
+//Create customer in Stripe
+const customer = await stripe.customers.create({
+    email
+})
+
 //Encrypt password
 const hashedPassword = await bcrypt.hash(password, 10)
 
 //Save to database
 const newUser = {
     email,
-    password: hashedPassword
+    password: hashedPassword,
+    stripeId: customer.id
 }
 users.push(newUser)
-await fs.writeFile("./data/users.json", JSON.stringify(users, null, 2))
+
+await fs.writeFile("./users.json", JSON.stringify(users, null, 2))
 res.status(201).json(newUser)
 }
 
