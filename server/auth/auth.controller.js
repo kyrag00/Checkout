@@ -1,4 +1,5 @@
-const initStripe = require("../stripe")
+// const initStripe = require("../stripe")
+const fetchUsers = require("../utils/fetchUsers")
 const fs = require("fs").promises
 const bcrypt = require("bcrypt")
 
