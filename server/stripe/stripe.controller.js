@@ -29,19 +29,6 @@ const verifySession = async(req, res) => {
     console.log(session)
 }
 
-const listAllProducts = async (req, res) => {
-    const stripe = initStripe()
 
-    try {
-    const products = await stripe.products.list({
-        limit: 3,
-        expand: ["data.default_price"]
-    })
-    res.status(200).json(products)
-    } catch (error) {
-        console.log(error)
-        res.status(400).json(error)
-    }
-}
 
-module.exports = {createCheckoutSession, listAllProducts, verifySession}
+module.exports = {createCheckoutSession, verifySession}

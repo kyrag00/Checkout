@@ -28,6 +28,7 @@ const Home = () => {
         <h1>Blooming</h1>
         <h3>Welcome to Blooming!🌸 </h3>
         {!user ? <Login setUser={setUser} /> : <Logout setUser={setUser} /> }
+        <br />
         {!user && <Register />}
         </>
     )

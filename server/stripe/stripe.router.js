@@ -3,7 +3,6 @@ const { createCheckoutSession, listAllProducts, verifySession } = require("./str
 const router = express.Router()
 
 router.post("/create-checkout-session", createCheckoutSession)
-router.get("/products", listAllProducts)
 router.post("/verify-session", verifySession)
 
 module.exports = router
