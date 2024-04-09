@@ -1,0 +1,17 @@
+[
+  {
+    "email": "test2@mail.com",
+    "password": "$2b$10$VyT78bNe.rI7WP56bql5ouEdiEq7lvMzL9p7tnPT5NRdq2Nie/rR6",
+    "stripeId": "cus_PtW0UkcGaaCt8X"
+  },
+  {
+    "email": "kyra@mail.se",
+    "password": "$2b$10$sjCWZLIDLvEmRJpUiEF3TuNiKMaRSaS6EsX2cHxlHm.mR2MAgWiZe",
+    "stripeId": "cus_PtRtknCfb15kfJ"
+  },
+  {
+    "email": "test@mail.com",
+    "password": "$2b$10$QblTSeZRdVnK/hQueTAYlOAUjnVkoYOZku1BD.BXxFG8lXLThTdC2",
+    "stripeId": "cus_PtTJYWsHRjHVwt"
+  }
+]

@@ -32,7 +32,7 @@ const newUser = {
 }
 users.push(newUser)
 
-await fs.writeFile("../users.json", JSON.stringify(users, null, 2))
+await fs.writeFile("./users.json", JSON.stringify(users, null, 2))
 res.status(201).json(newUser)
 }
 
