@@ -24,8 +24,8 @@ app.use(
 )
 
 app.use("/payments", stripeRouter)
-app.use("api/users", userRouter)
-app.use("api/auth", authRouter)
+app.use("/api/users", userRouter)
+app.use("/api/auth", authRouter)
 app.use("/products", productsRouter)
 
 
