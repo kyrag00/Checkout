@@ -1,21 +1,22 @@
 import { useEffect, useState } from "react"
 import "../styles/products.css"
+import { useCart } from "../context/CartContext";
 
-interface IProduct {
+export interface IProduct {
     id: string;
     name: string;
     images: string[];
     description: string;
-    // price: number;
     default_price: {
         unit_amount: number
     }
-    // unit_amount: number;
    }
 
 const Products = () => {
 
     const [products, setProducts] = useState<IProduct[]>([])
+
+    const {addToCart} = useCart()
 
     useEffect(() => {
         const fetchProducts = async() => {
@@ -29,8 +30,6 @@ const Products = () => {
                 }))
     
                 setProducts(productsWithPrice)
-
-                // setProducts(fetchedData)
                 
             
             } catch(error) {
@@ -55,7 +54,7 @@ const Products = () => {
                       ))}
                         <p>{product.description}</p>
                         <p>Price: {product.default_price.unit_amount / 100} SEK</p>
-                        <button>Buy</button>
+                        <button onClick={() => addToCart(product)}>Buy</button>
                     </div>
                     </div>
                 ))}
