@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import Login from "../Login"
 import Logout from "../Logout"
 import Register from "../Register"
+import Products from "./Products"
 
 const Home = () => {
     const [user, setUser] = useState<string>("")
@@ -30,6 +31,8 @@ const Home = () => {
         {!user ? <Login setUser={setUser} /> : <Logout setUser={setUser} /> }
         <br />
         {!user && <Register />}
+
+        <Products/>
         </>
     )
     }

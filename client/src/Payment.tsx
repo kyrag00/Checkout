@@ -1,4 +1,7 @@
+import { useCart } from "./context/CartContext"
+
 const Payment = () => {
+    const {cart} = useCart()
 
     const handlePayment = async() => {
         const response = await fetch("http://localhost:3000/payments/create-checkout-session",{
@@ -6,25 +9,19 @@ const Payment = () => {
           headers: {
             "Content-Type": "application/json"
           },
-          body: JSON.stringify([
-            {
-            product: "price_1P2BhuBeGQffwmje4lnnlBPg",
-            quantity: 2
-          },
-        {
-            product: "price_1P2AWJBeGQffwmjeWd9BpxC3",
-            quantity: 1
-        }
-        ])
+          body: JSON.stringify(cart),
+          credentials: "include"
         })
+
         const data = await response.json()
+        localStorage.setItem("sessionId", JSON.stringify(data.sessionId))
         window.location = data.url
       }
 
 
       return (
     <div>
-      <button onClick={handlePayment}>Ge mig pengar!!!</button>
+      <button onClick={handlePayment}>Checkout</button>
     </div>
       )
 }

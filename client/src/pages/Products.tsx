@@ -54,11 +54,12 @@ const Products = () => {
                       ))}
                         <p>{product.description}</p>
                         <p>Price: {product.default_price.unit_amount / 100} SEK</p>
-                        <button onClick={() => addToCart(product)}>Buy</button>
+                        <button onClick={() => addToCart(product)}>Add to cart</button>
                     </div>
                     </div>
                 ))}
             </div>
+            
         </>
     )
 }

@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom"
 import "./styles/nav.css"
+import Cart from "./Cart"
 
 const Navigation = () => {
     return  (
@@ -13,7 +14,11 @@ const Navigation = () => {
             <li>
                 <NavLink to={"/products"}>Products</NavLink>
             </li>
+            <li>
+            <Cart/>
+            </li>
         </ul>
+        {/* <Cart/> */}
         </nav>
         </>
     )
