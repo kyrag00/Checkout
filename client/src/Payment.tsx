@@ -1,7 +1,26 @@
+import { useState, useEffect } from "react"
 import { useCart } from "./context/CartContext"
 
 const Payment = () => {
     const {cart} = useCart()
+
+    const [user, setUser] = useState<string>("")
+
+    useEffect(() => {
+        const authorize = async() => {
+          const response = await fetch("http://localhost:3000/api/auth/authorize", {
+        credentials: "include"
+      })
+    
+      const data = await response.json()
+      if (response.status === 200) {
+        setUser(data)
+      } else {
+        setUser("")
+      }
+        }
+        authorize()
+      }, [])
 
     const handlePayment = async() => {
         const response = await fetch("http://localhost:3000/payments/create-checkout-session",{
@@ -21,7 +40,8 @@ const Payment = () => {
 
       return (
     <div>
-      <button onClick={handlePayment}>Checkout</button>
+      <button onClick={handlePayment} disabled={!user}>
+      {user ? "Checkout" : "Log in to order"}</button>
     </div>
       )
 }

@@ -7,6 +7,8 @@ const createCheckoutSession = async (req, res) => {
 
     const stripe = initStripe()
 
+    const userEmail = req.session.user.email;
+
     const session = await stripe.checkout.sessions.create({
         mode: "payment",
         line_items: cart.map(item => {
@@ -17,10 +19,10 @@ const createCheckoutSession = async (req, res) => {
         }),
         success_url: "http://localhost:5175/confirmation",
         cancel_url: "http://localhost:5175",
-        // lägg till customer
+        customer_email: userEmail,
     })
 
-    res.status(200).json({url: session.url})
+    res.status(200).json({url: session.url, sessionId: session.id})
 }
 
 const verifySession = async(req, res) => {
