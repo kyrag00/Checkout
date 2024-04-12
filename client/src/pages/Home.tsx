@@ -44,7 +44,7 @@ const Home = () => {
                 <div className="about">
                 <img src={AboutImg} alt="About us" />
                 </div>
-        <Products/>
+        {/* <Products/> */}
         </>
     )
     }

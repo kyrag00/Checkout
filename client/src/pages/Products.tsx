@@ -47,13 +47,14 @@ const Products = () => {
                     <div className="prod_container">
                          {products.map(product => (
                             <div className="product" key={product.id}>
-                      <h3>{product.name}</h3> 
+                      
                       <div className="prod_details">
                       {product.images.map((image, index) => (
                         <img key={index} src={image} alt={product.name} />
                       ))}
+                        <h3>{product.name}</h3> 
                         <p>{product.description}</p>
-                        <p>Price: {product.default_price.unit_amount / 100} SEK</p>
+                        <p className="price">{product.default_price.unit_amount / 100} SEK</p>
                         <button onClick={() => addToCart(product)}>Add to cart</button>
                     </div>
                     </div>

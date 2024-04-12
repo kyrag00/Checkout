@@ -6,11 +6,12 @@ nav ul {
 }
 
 nav ul a {
-    padding: 20px;
+    padding: 20px 30px;
+    font-size: 20px;
     /* color:rgb(92, 75, 75) */
-    color: rgb(225, 167, 177)
+    color: rgb(225, 167, 177);
 }
 
 nav ul a:hover {
-    color: rgb(165, 165, 225);
+    color: #7e4847;
 }
