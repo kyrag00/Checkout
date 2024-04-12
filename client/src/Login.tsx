@@ -35,7 +35,7 @@ const Login = ({setUser}: ILoginProps) => {
         <>
         <input type="text" value={email} onChange={handleEmail} placeholder="Email"/>
         <input type="text" value={password} onChange={handlePassword} placeholder="Password" />
-        <button onClick={handleLogin}>Log in</button>
+        <button style={{ marginRight: '20px' }} onClick={handleLogin}>Log in</button>
         </>
     )
 }
