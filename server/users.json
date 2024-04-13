@@ -13,5 +13,10 @@
     "email": "test@mail.com",
     "password": "$2b$10$QblTSeZRdVnK/hQueTAYlOAUjnVkoYOZku1BD.BXxFG8lXLThTdC2",
     "stripeId": "cus_PtTJYWsHRjHVwt"
+  },
+  {
+    "email": "felix@mail.com",
+    "password": "$2b$10$HpFjaV4h5RLzf3iWnyEfMOeTMa7pntgVg6rXS8Hu/5f9jk.2JjH32",
+    "stripeId": "cus_Pv3Wh1frn0Useg"
   }
 ]

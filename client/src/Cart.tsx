@@ -13,7 +13,7 @@ const {cart} = useCart()
                 <div className="product" key={index}>
                     <h3>{item.product.name}</h3>
                         <img src={item.product.images[0]} alt={item.product.name} />
-                    <p>Price: {item.product.default_price.unit_amount / 100} SEK</p>
+                    <p className="price">Price: {item.product.default_price.unit_amount / 100} SEK</p>
                     <p>Quantity: {item.quantity}</p>
                 </div>
             ))}

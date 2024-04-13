@@ -54,5 +54,33 @@
         ],
         "total": 598,
         "date": "2024-04-12T11:33:24.889Z"
+    },
+    {
+        "orderNumber": 456642,
+        "customerName": "Felix",
+        "products": [
+            {
+                "description": "Blue fantasy",
+                "quantity": 1
+            },
+            {
+                "description": "Calm afternoon",
+                "quantity": 1
+            }
+        ],
+        "total": 598,
+        "date": "2024-04-13T20:45:37.033Z"
+    },
+    {
+        "orderNumber": 346166,
+        "customerName": "felix",
+        "products": [
+            {
+                "description": "Blue fantasy",
+                "quantity": 2
+            }
+        ],
+        "total": 598,
+        "date": "2024-04-13T21:13:18.243Z"
     }
 ]
