@@ -1,10 +1,5 @@
 import { NavLink } from "react-router-dom"
 import "./styles/nav.css"
-import Login from "./Login"
-import { useState } from "react";
-import Register from "./Register";
-import Logout from "./Logout";
-import HomeImage from"./images/Home.png"
 
 const Navigation = () => {
 

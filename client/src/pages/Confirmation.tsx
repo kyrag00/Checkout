@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "../styles/confirmation.css"
 
 const Confirmation = () => {
 
@@ -39,9 +40,8 @@ const Confirmation = () => {
   }, [verified]);
 
     return (
-
-        <div>
-            <h2>{ verified && !isloading ? "Tack för ditt köp!🥰" : "Loading..."}</h2>
+        <div className="conf_div">
+        <h2>{ verified && !isloading ? "Order confirmed!" : "Loading..."}</h2>
         </div>
     )
 }

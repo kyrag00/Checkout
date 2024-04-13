@@ -1,0 +1,26 @@
+/* .confirmation {
+    display: flex;
+    justify-content: center;
+} */
+
+/* .confirmation img {
+    max-width: 80%;
+    height: auto;
+} */
+
+h2 {
+    text-align: center;
+    color: #7e4847;
+    margin-top: 20px;
+}
+
+.conf_div {
+    background-image: url("../images/Thank_you.png");
+    background-size: cover; 
+    background-position: center; 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh; 
+}
