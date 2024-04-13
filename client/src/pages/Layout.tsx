@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom";
 import Navigation from "../Navigation";
 import CartProvider from "../context/CartContext";
+import "../styles/footer.css"
 
 const Layout = ()=> {
 
@@ -13,6 +14,9 @@ const Layout = ()=> {
             <main>
               <Outlet />
             </main>
+            <footer className="footer">
+              <p>Images were generated with Hotpot AI</p>
+            </footer>
             </CartProvider>
           </>
         );
